@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 14px 0; }
+    label { display:block; font-weight:600; margin-bottom:6px; }
+    input { width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #ccc; }
+    button { padding: 10px 14px; border: 0; border-radius: 10px; cursor: pointer; }
+    .row { display:flex; gap:10px; flex-wrap: wrap; }
+    .row > * { flex: 1; min-width: 200px; }
+    .muted { color:#666; font-size: 0.92rem; }
+    .error { color: #b00020; }
+    pre { background:#f7f7f7; padding:10px; border-radius:10px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <h1>Cuestionario</h1>
+
+  <div class="card">
+    <h2>1) Identificación</h2>
+    <div class="row">
+      <div>
+        <label for="identifier">Nombre de usuario</label>
+        <input id="identifier" placeholder="Alejandro Iram" />
+      </div>
+      <div style="align-self:end;">
+        <button id="btnStart">Iniciar</button>
+      </div>
+    </div>
+    <p class="muted">User ID: <span id="userIdText">—</span></p>
+    <p id="authMsg" class="muted"></p>
+    <p id="authErr" class="error"></p>
+  </div>
+
+  <div class="card">
+    <h2>2) Preguntas</h2>
+    <div id="questionsBox" class="muted">Aún no cargadas.</div>
+    <p id="qErr" class="error"></p>
+  </div>
+
+  <div class="card">
+    <h2>3) Enviar / Ver respuestas</h2>
+    <div class="row">
+      <button id="btnSubmit">Enviar respuestas</button>
+      <button id="btnView">Ver mis respuestas</button>
+    </div>
+    <p id="saveMsg" class="muted"></p>
+    <p id="saveErr" class="error"></p>
+    <h3>Salida</h3>
+    <pre id="output">{}</pre>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
